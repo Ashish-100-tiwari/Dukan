@@ -14,6 +14,7 @@ export default function Login() {
     formState: { errors },
   } = useForm();
 
+
   return (
     <>
       {user && <Navigate to="/" replace={true}></Navigate>}
@@ -95,7 +96,7 @@ export default function Login() {
                   <p className="text-red-500">{errors.password.message}</p>
                 )}
               </div>
-              {error && <p className="text-red-500">{error.message}</p>}
+              {error && <p className="text-red-500">{error || error.message}</p>}
             </div>
 
             <div>
